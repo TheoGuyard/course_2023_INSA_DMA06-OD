@@ -15,7 +15,7 @@ Ask for help if you have any installation issues.
 
 The entry point of the code is the `main.py` file that allows to solve a TSP instance with a particular method.
 To do so, run
-```bash
+```
 $ python main.py <instance> <method>
 ```
 from a command line shell.
@@ -53,7 +53,7 @@ A solution method is called with the adjacency matrix of the instance as argumen
 It must return the cost of the solution found as an `int` or a `float`.
 You can print anything you want for debugging purposes, but the solution methods in the final delivery must not display anything.
 The output should look like this:
-```bash
+```
 $ python main.py gr21.tsp hk
 Instance   : gr21.tsp
 Method     : hk
