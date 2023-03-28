@@ -33,7 +33,9 @@ For instance, running
 ```shell
 $ python main.py gr21.tsp hk
 ```
-allows you to run the Held-Karp algorithm on the `gr21.tsp` instance file.
+allows you to use the Held-Karp algorithm on the `gr21.tsp` instance file.
+You can build-up and solve the DFJ and the MTZ formulations of the problem using `pulp` package with the default solver backend.
+Its documentation is available [here](https://coin-or.github.io/pulp/).
 
 
 ## Adding new instances
