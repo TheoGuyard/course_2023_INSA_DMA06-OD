@@ -5,6 +5,7 @@ import pathlib
 import time
 import tsplib95
 from solve_ac import solve_ac
+from solve_ct import solve_ct
 from solve_dfj import solve_dfj
 from solve_hk import solve_hk
 from solve_lk import solve_lk
@@ -28,7 +29,10 @@ def load_instance(instance_name):
 
 parser = argparse.ArgumentParser()
 parser.add_argument("instance")
-parser.add_argument("method", choices=["ac", "dfj", "hk", "lk", "mtz", "nn"])
+parser.add_argument(
+    "method",
+    choices=["ac", "ct", "dfj", "hk", "lk", "mtz", "nn"]
+)
 
 if __name__ == "__main__":
     args = parser.parse_args()
@@ -41,6 +45,8 @@ if __name__ == "__main__":
     t0 = time.time()
     if args.method == "ac":
         cost = solve_ac(M)
+    if args.method == "ct":
+        cost = solve_ct(M)
     elif args.method == "dfj":
         cost = solve_dfj(M)
     elif args.method == "hk":
