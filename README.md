@@ -37,15 +37,6 @@ allows you to use the Held-Karp algorithm on the `gr21.tsp` instance file.
 You can build-up and solve the DFJ and the MTZ formulations of the problem using `pulp` package with the default solver backend.
 Its documentation is available [here](https://coin-or.github.io/pulp/).
 
-## Contest
-
-If you want to participate to the group contest, implement your algorithm inside the `solve_ct.py` file.
-You can run your custom method in the same lines as the other ones using the `ct` keyword:
-```
-$ python main.py <instance> ct
-```
-
-
 ## Adding new instances
 
 You can add new TSP instances in the `instances` folder by visiting the [TSPLIB](http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/) website.
@@ -70,3 +61,14 @@ Method     : hk
 Solve time : 0:00:00.049727
 Tour cost  : 2707
 ```
+
+## Contest
+
+If you want to participate to the group contest, implement your algorithm inside the `solve_ct.py` file.
+You can run your custom method in the same lines as the other ones using the `ct` keyword:
+```
+$ python main.py <instance> ct
+```
+
+
+
