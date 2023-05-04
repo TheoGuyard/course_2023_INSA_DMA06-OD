@@ -1,4 +1,3 @@
-import argparse
 import datetime
 import numpy as np
 import pathlib
@@ -27,35 +26,29 @@ def load_instance(instance_name):
     return M
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument("instance")
-parser.add_argument(
-    "method",
-    choices=["ac", "ct", "dfj", "hk", "lk", "mtz", "nn"]
-)
-
 if __name__ == "__main__":
-    args = parser.parse_args()
+    instance = "gr17.tsp"
+    method   = "ac"         # choices: "ac", "ct", "dfj", "hk", "lk", "mtz", "nn"
 
-    print("Instance   : {}".format(args.instance))
-    print("Method     : {}".format(args.method))
+    print("Instance   : {}".format(instance))
+    print("Method     : {}".format(method))
 
-    M = load_instance(args.instance)
+    M = load_instance(instance)
 
     t0 = time.time()
-    if args.method == "ac":
+    if method == "ac":
         cost = solve_ac(M)
-    if args.method == "ct":
+    elif method == "ct":
         cost = solve_ct(M)
-    elif args.method == "dfj":
+    elif method == "dfj":
         cost = solve_dfj(M)
-    elif args.method == "hk":
+    elif method == "hk":
         cost = solve_hk(M)
-    elif args.method == "lk":
+    elif method == "lk":
         cost = solve_lk(M)
-    elif args.method == "mtz":
+    elif method == "mtz":
         cost = solve_mtz(M)
-    elif args.method == "nn":
+    elif method == "nn":
         cost = solve_nn(M)
     else:
         raise NotImplementedError
