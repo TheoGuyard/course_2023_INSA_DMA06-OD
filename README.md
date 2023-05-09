@@ -14,13 +14,12 @@ Ask for help if you have any installation issues.
 ## Solving the TSP
 
 The entry point of the code is the `main.py` file that allows to solve a TSP instance with a particular method.
-To do so, run
+All you have to do is to set the `instance` and `method` variables at lines `30-31` of this file and run it as follows:
 ```
-$ python main.py <instance> <method>
+$ python main.py
 ```
-from a command line shell.
-The `<instance>` argument must match a file name that is located in the `instances` folder.
-The `<method>` argument must be one of the following:
+The `instance` variable must match a file name that is located in the `instances` folder.
+The `method` variable must be one of the following:
 
 * `ac` - Ant-Colony heuristic
 * `dfj` - Dantzig–Fulkerson–Johnson formulation
@@ -29,12 +28,13 @@ The `<method>` argument must be one of the following:
 * `mtz` - Miller–Tucker–Zemlin formulation
 * `nn` - Nearest-Neighbor heuristic
 
-For instance, running
-```shell
-$ python main.py gr21.tsp hk
+For instance, setting
+```python
+ instance = "gr21.tsp"
+ method   = "hk"
 ```
 allows you to use the Held-Karp algorithm on the `gr21.tsp` instance file.
-You can build-up and solve the DFJ and the MTZ formulations of the problem using `pulp` package with the default solver backend.
+To solve the DFJ and the MTZ formulations, you are asked to use the `pulp` package with the default solver backend.
 Its documentation is available [here](https://coin-or.github.io/pulp/).
 
 ## Adding new instances
@@ -55,7 +55,7 @@ It must return the cost of the solution found as an `int` or a `float`.
 You can print anything you want for debugging purposes, but the solution methods in the final delivery must not display anything.
 The output should look like this:
 ```
-$ python main.py gr21.tsp hk
+$ python main.py
 Instance   : gr21.tsp
 Method     : hk
 Solve time : 0:00:00.049727
@@ -65,9 +65,9 @@ Tour cost  : 2707
 ## Contest
 
 If you want to participate to the group contest, implement your algorithm inside the `solve_ct.py` file.
-You can run your custom method in the same lines as the other ones using the `ct` keyword:
-```
-$ python main.py <instance> ct
+You can run your custom method in the same lines as the other ones by setting
+```python
+method = "ct"
 ```
 
 
