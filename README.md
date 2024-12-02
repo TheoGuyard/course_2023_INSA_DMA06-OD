@@ -1,6 +1,8 @@
-# DMA06-OD
+# course 2023_INSA_DMA06-OD
 
-Discrete Optimization project of the DMA06-OD course at INSA Rennes.
+This repo is about the Discrete Optimization course given at INSA Rennes in 2023.
+
+You will find useful material, lectures and code. Please contact me to request any help or to point out missing files.
 
 ## Quickstart
 
